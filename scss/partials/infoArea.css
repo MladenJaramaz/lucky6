@@ -1,0 +1,102 @@
+@import url("https://fonts.googleapis.com/css?family=Permanent+Marker");
+@import url("https://fonts.googleapis.com/css?family=Merriweather:300i,400,700");
+#infoArea {
+  background-color: goldenrod;
+  height: 225px;
+  width: 100%;
+  position: relative;
+  top: 60px;
+  transition: border .5s; }
+  #infoArea .row {
+    height: 100%; }
+    #infoArea .row #firstInfo,
+    #infoArea .row #firstFiveInfo,
+    #infoArea .row #commonColorInfo {
+      font-size: 20px;
+      text-align: center; }
+    #infoArea .row #firstInfo,
+    #infoArea .row #firstFiveInfo {
+      padding-top: 4px;
+      padding-bottom: 15px;
+      border-right: 3px solid maroon; }
+    #infoArea .row #firstInfo #firstOverUnderInfo,
+    #infoArea .row #firstInfo #firstEvenUnevenInfo,
+    #infoArea .row #firstInfo #firstColorInfo {
+      height: 50px;
+      border: 1px solid darkgray;
+      display: flex;
+      width: 80%;
+      margin: 0 auto;
+      background-color: maroon; }
+    #infoArea .row #firstInfo #firstOverUnderInfo #firstIsOver {
+      border-right: 1px solid darkgrey; }
+    #infoArea .row #firstInfo #firstOverUnderInfo #firstIsOver,
+    #infoArea .row #firstInfo #firstOverUnderInfo #firstIsUnder {
+      line-height: 200%;
+      text-align: center;
+      width: 50%; }
+    #infoArea .row #firstInfo #firstEvenUnevenInfo #firstIsEven {
+      border-right: 1px solid darkgrey; }
+    #infoArea .row #firstInfo #firstEvenUnevenInfo #firstIsEven,
+    #infoArea .row #firstInfo #firstEvenUnevenInfo #firstIsUneven {
+      text-align: center;
+      line-height: 200%;
+      width: 50%; }
+    #infoArea .row #firstInfo #firstColorInfo {
+      line-height: 200%;
+      padding-left: 70px; }
+    #infoArea .row #firstFiveInfo {
+      position: relative; }
+      #infoArea .row #firstFiveInfo #sumCounterParent {
+        border: 1px solid darkgray;
+        width: 30%;
+        height: 150px;
+        position: relative;
+        left: 20px; }
+        #infoArea .row #firstFiveInfo #sumCounterParent #sumCounter {
+          background-color: maroon;
+          position: absolute;
+          height: 0;
+          width: 100%;
+          top: 150px;
+          line-height: 0%; }
+      #infoArea .row #firstFiveInfo span {
+        position: absolute;
+        font-size: 16px;
+        top: 55px;
+        right: 60px; }
+    #infoArea .row #commonColorInfo {
+      padding-top: 6px; }
+      #infoArea .row #commonColorInfo #sliderParent {
+        display: flex;
+        justify-content: space-around; }
+        #infoArea .row #commonColorInfo #sliderParent .slider {
+          position: relative;
+          height: 150px;
+          width: 0;
+          border: 1px solid darkgray; }
+          #infoArea .row #commonColorInfo #sliderParent .slider .slidingBall {
+            position: absolute;
+            width: 15px;
+            height: 15px;
+            border-radius: 50%;
+            top: 135px;
+            right: -7px; }
+          #infoArea .row #commonColorInfo #sliderParent .slider #redSlidingBall {
+            background-color: red; }
+          #infoArea .row #commonColorInfo #sliderParent .slider #blueSlidingBall {
+            background-color: darkblue; }
+          #infoArea .row #commonColorInfo #sliderParent .slider #blackSlidingBall {
+            background-color: black; }
+          #infoArea .row #commonColorInfo #sliderParent .slider #brownSlidingBall {
+            background-color: brown; }
+          #infoArea .row #commonColorInfo #sliderParent .slider #orangeSlidingBall {
+            background-color: darkorange; }
+          #infoArea .row #commonColorInfo #sliderParent .slider #greenSlidingBall {
+            background-color: green; }
+          #infoArea .row #commonColorInfo #sliderParent .slider #purpleSlidingBall {
+            background-color: purple; }
+          #infoArea .row #commonColorInfo #sliderParent .slider #yellowSlidingBall {
+            background-color: yellow; }
+
+/*# sourceMappingURL=infoArea.css.map */

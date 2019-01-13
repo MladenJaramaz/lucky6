@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta name="description" content="lucky6 game">
+    <meta name="keywords" content="casino, gambling">
+    <meta name="author" content="Mladen Jaramaz">
+    <title>Lucky6</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO"
+        crossorigin="anonymous">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU"
+        crossorigin="anonymous">
+    <link rel="stylesheet" href="scss/master.css">
+</head>
+
+<body>
+    <header>
+        <img src="img/logo-balls.png" alt="snooker balls" class="img-fluid">
+    </header>
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-8">
+                <div id="gameArea">
+                    <div class="row">
+                        <div class="col-4">
+                            <div id="firstFive"></div>
+                            <div id="numberDrawn">
+                                <div id="rotatingBall">
+                                    <div id="ballNumber"></div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-8">
+                            <div id="nextThirty">
+                            </div>
+                        </div>
+                    </div>
+                    <!-- BEGIN infoArea -->
+                    <div id="infoArea">
+                        <div class="row">
+                            <div class="col-3" id="firstInfo">
+                                First Number
+                                <div id="firstOverUnderInfo">
+                                    <div id="firstIsOver">Over</div>
+                                    <div id="firstIsUnder">Under</div>
+                                </div>
+                                <div id="firstEvenUnevenInfo">
+                                    <div id="firstIsEven">Even</div>
+                                    <div id="firstIsUneven">Uneven</div>
+                                </div>
+                                <div id="firstColorInfo">
+                                    Color
+                                </div>
+                            </div>
+                            <div class="col-2" id="firstFiveInfo">
+                                First 5 Sum
+                                <span id="sumCounterDisp">122.5</span>
+                                <div id="sumCounterParent">
+                                    <div id="sumCounter"></div>
+                                </div>
+                            </div>
+                            <div class="col-7" id="commonColorInfo">
+                                Most Common Color
+                                <div id="sliderParent">
+                                    <div class="slider" id="redSlider">
+                                        <div class="slidingBall" id="redSlidingBall"></div>
+                                    </div>
+                                    <div class="slider" id="blueSlider">
+                                        <div class="slidingBall" id="blueSlidingBall"></div>
+                                    </div>
+                                    <div class="slider" id="blackSlider">
+                                        <div class="slidingBall" id="blackSlidingBall"></div>
+                                    </div>
+                                    <div class="slider" id="brownSlider">
+                                        <div class="slidingBall" id="brownSlidingBall"></div>
+                                    </div>
+                                    <div class="slider" id="orangeSlider">
+                                        <div class="slidingBall" id="orangeSlidingBall"></div>
+                                    </div>
+                                    <div class="slider" id="purpleSlider">
+                                        <div class="slidingBall" id="purpleSlidingBall"></div>
+                                    </div>
+                                    <div class="slider" id="greenSlider">
+                                        <div class="slidingBall" id="greenSlidingBall"></div>
+                                    </div>
+                                    <div class="slider" id="yellowSlider">
+                                        <div class="slidingBall" id="yellowSlidingBall"></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- END infoArea -->
+                </div>
+
+            </div>
+            <div class="col-4">
+                <div id="betArea">
+                    <h2>What kind of a game you want to play ? <span>* multiple choices allowed</span></h2>
+                    <form action="GET">
+                        <!-- BEGIN checkboxes -->
+                        <div class="form-check">
+                            <input type="checkbox" class="form-check-input checker" id="firstOverUnder" name="firstOverUnder">
+                            <label for="firstOverUnder" class="form-check-label">First number Over/Under (24.5)</label>
+                            <input type="text" id="firstOverUnderAmount" name="firstOverUnderAmount" placeholder="Amount of RSD you want to bet"
+                                data-hidden="yes">
+                            <select id="firstOverUnderBet" name="firstOverUnderBet">
+                                <option value="over">Over</option>
+                                <option value="under">Under</option>
+                            </select>
+                            <span class="errMsg"></span>
+                        </div>
+                        <div class="form-check">
+                            <input type="checkbox" class="form-check-input checker" id="firstEvenUneven" name="firstEvenUneven">
+                            <label for="firstEvenUneven" class="form-check-label">First number Even/Uneven</label>
+                            <input type="text" id="firstEvenUnevenAmount" name="firstEvenUnevenAmount" placeholder="Amount of RSD you want to bet"
+                                data-hidden="yes">
+                            <select id="firstEvenUnevenBet" name="firstEvenUnevenBet">
+                                <option value="even">Even</option>
+                                <option value="uneven">Uneven</option>
+                            </select>
+                            <span class="errMsg"></span>
+                        </div>
+                        <div class="form-check">
+                            <input type="checkbox" class="form-check-input checker" id="firstColor" name="firstColor">
+                            <label for="firstColor" class="form-check-label">First number color</label>
+                            <input type="text" id="firstColorAmount" name="firstColorAmount" placeholder="Amount of RSD you want to bet"
+                                data-hidden="yes">
+                            <select id="firstColorBet" name="firstColorBet">
+                                <option value="red">Red</option>
+                                <option value="darkblue">Blue</option>
+                                <option value="black">Black</option>
+                                <option value="brown">Brown</option>
+                                <option value="darkorange">Orange</option>
+                                <option value="purple">Purple</option>
+                                <option value="green">Green</option>
+                                <option value="yellow">Yelllow</option>
+                            </select>
+                            <span class="errMsg"></span>
+                        </div>
+                        <div class="form-check">
+                            <input type="checkbox" class="form-check-input checker" id="firstFiveOverUnder" name="firstFiveOverUnder">
+                            <label for="firstFiveOverUnder" class="form-check-label">First 5 numbers sum Over/Under
+                                (122.5)</label>
+                            <input type="text" id="firstFiveOverUnderAmount" name="firstFiveOverUnderAmount"
+                                placeholder="Amount of RSD you want to bet" data-hidden="yes">
+                            <select id="firstFiveOverUnderBet" name="firstFiveOverUnderBet">
+                                <option value="over">Over</option>
+                                <option value="under">Under</option>
+                            </select>
+                            <span class="errMsg"></span>
+                        </div>
+                        <div class="form-check">
+                            <input type="checkbox" class="form-check-input checker" id="mostCommonColor" name="mostCommonColor">
+                            <label for="mostCommonColor" class="form-check-label">Most common color</label>
+                            <input type="text" id="mostCommonColorAmount" name="mostCommonColorAmount" placeholder="Amount of RSD you want to bet"
+                                data-hidden="yes">
+                            <select id="mostCommonColorBet" name="mostCommonColorBet">
+                                <option value="red">Red</option>
+                                <option value="darkblue">Blue</option>
+                                <option value="black">Black</option>
+                                <option value="brown">Brown</option>
+                                <option value="darkorange">Orange</option>
+                                <option value="purple">Purple</option>
+                                <option value="green">Green</option>
+                                <option value="yellow">Yelllow</option>
+                            </select>
+                            <span class="errMsg err"></span>
+                        </div>
+                        <!-- END checkboxes -->
+                        <!-- BEGIN luckySix -->
+                        <div id="luckySixParent">
+                            <h4>Choose your lucky6 combo</h4>
+                            <div id="luckyCombos">
+                                <div data-combo="6" class="comb">6/6</div>
+                                <div data-combo="7" class="comb">6/7</div>
+                                <div data-combo="8" class="comb">6/8</div>
+                                <div data-combo="9" class="comb">6/9</div>
+                                <div data-combo="10" class="comb">6/10</div>
+                            </div>
+                            <h4>Now choose your lucky6 numbers</h4>
+                            <div id="luckySix"></div>
+                            <input type="text" id="luckySixAmount" name="luckySixAmount" placeholder="Amount of RSD you want to bet">
+                            <input type="submit" value="Place Bet">
+                            <span class="errMsgSix"></span>
+                        </div>
+                        <!-- END luckySix -->
+                    </form>
+                    <span class="clover"><i class="fas fa-cannabis"></i></span>
+                    <span class="clover"><i class="fas fa-cannabis"></i></span>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- BEGIN result -->
+    <div id="resultParent">
+        <div id="result">
+            <h3>Your bet summary</h3>
+            <button type="button" id="resBtn" class="close" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+            </button>
+            <div id="firstOverUnderResult">
+                First Over/Under
+                <div>Bet: <span></span></div>
+                <div>Won: <span></span></div>
+            </div>
+            <div id="firstEvenUnevenResult">
+                First Even/Uneven
+                <div>Bet: <span></span></div>
+                <div>Won: <span></span></div>
+            </div>
+            <div id="firstColorResult">
+                First Color
+                <div>Bet: <span></span></div>
+                <div>Won: <span></span></div>
+            </div>
+            <div id="firstFiveOverUnderResult">
+                First Five Over/Under
+                <div>Bet: <span></span></div>
+                <div>Won: <span></span></div>
+            </div>
+            <div id="mostCommonColorResult">
+                Most Common Color
+                <div>Bet: <span></span></div>
+                <div>Won: <span></span></div>
+            </div>
+            <div id="luckySixResult">
+                Lucky 6
+                <div>Bet: <span></span></div>
+                <div>Won: <span></span></div>
+            </div>
+            <div id="profit">
+                Profit: <span></span>
+            </div>
+            <!-- BEGIN: topProfits -->
+            <div id="topProfits">
+                <h2>Top 5 Profits</h2>
+                <ul id="topProfitsList">
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                </ul>
+            </div>
+            <!-- END: topProfits -->
+        </div>
+    </div>
+    <!-- END result -->
+
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy"
+        crossorigin="anonymous"></script>
+    <script src="js/resources.js"></script>
+    <script src="js/gameOutcome.js"></script>
+    <script src="js/gameFlow.js"></script>
+    <script src="js/initGame.js"></script>
+</body>
+
+</html>

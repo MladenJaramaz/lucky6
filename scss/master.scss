@@ -1,0 +1,52 @@
+/************************************   General styles   ****************************************/
+@import "partials/vars.scss";
+
+body {
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    font-family: "Permanent Marker", cursive;
+    background-color: $main-page-col;
+}
+* {
+    user-select: none;
+}
+/*************************************************************************************************/
+
+
+
+/************************************        Layout    *******************************************/
+.col-4, .col-8 {
+    padding: 0
+}
+/******************************************************************************************
+
+
+
+/************************************   Specific styles   ****************************************/
+header {
+    padding-bottom: 24px;
+    img {
+        display: block;
+        margin: 0 auto;
+    }
+}
+@import "partials/gameArea.scss";
+@import "partials/betArea.scss";
+@import "partials/infoArea.scss";
+@import "partials/result.scss";
+/*************************************************************************************************/
+
+
+
+/************************************   Helper styles   ****************************************/
+.clover {
+    display: none;
+}
+#topProfitsList {
+    list-style-type: none;
+    padding: 0;
+    margin: 0 auto;
+}
+/*************************************************************************************************/

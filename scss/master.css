@@ -1,0 +1,521 @@
+/************************************   General styles   ****************************************/
+@import url("https://fonts.googleapis.com/css?family=Permanent+Marker");
+@import url("https://fonts.googleapis.com/css?family=Merriweather:300i,400,700");
+@import url("https://fonts.googleapis.com/css?family=Permanent+Marker");
+@import url("https://fonts.googleapis.com/css?family=Merriweather:300i,400,700");
+@import url("https://fonts.googleapis.com/css?family=Permanent+Marker");
+@import url("https://fonts.googleapis.com/css?family=Merriweather:300i,400,700");
+@import url("https://fonts.googleapis.com/css?family=Permanent+Marker");
+@import url("https://fonts.googleapis.com/css?family=Merriweather:300i,400,700");
+@import url("https://fonts.googleapis.com/css?family=Permanent+Marker");
+@import url("https://fonts.googleapis.com/css?family=Merriweather:300i,400,700");
+body {
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  font-family: "Permanent Marker", cursive;
+  background-color: #009900; }
+
+* {
+  user-select: none; }
+
+/*************************************************************************************************/
+/************************************        Layout    *******************************************/
+.col-4, .col-8 {
+  padding: 0; }
+
+/******************************************************************************************
+
+
+
+/************************************   Specific styles   ****************************************/
+header {
+  padding-bottom: 24px; }
+  header img {
+    display: block;
+    margin: 0 auto; }
+
+#gameArea {
+  background-color: black;
+  height: 780px;
+  box-shadow: 0 0 46px;
+  position: relative; }
+  #gameArea #numberDrawn {
+    box-sizing: content-box;
+    width: 250px;
+    height: 250px;
+    border-radius: 50%;
+    background-color: white;
+    margin-left: 75px;
+    position: relative;
+    text-align: center;
+    border: 8px solid goldenrod;
+    box-shadow: inset 0 0 20px goldenrod; }
+    #gameArea #numberDrawn #rotatingBall {
+      border-radius: 50%;
+      text-align: center;
+      height: 0;
+      width: 0;
+      position: absolute;
+      overflow: hidden;
+      transform: rotateZ(0); }
+      #gameArea #numberDrawn #rotatingBall #ballNumber {
+        background-color: white;
+        border-radius: 50%;
+        width: 50%;
+        height: 50%;
+        position: absolute;
+        top: 25%;
+        right: 25%;
+        font-size: 0; }
+  #gameArea #firstFive {
+    margin-left: 85px;
+    margin-top: 50px;
+    margin-bottom: 50px; }
+    #gameArea #firstFive .circle1 {
+      display: inline-block;
+      width: 50px;
+      height: 50px;
+      position: relative;
+      border-radius: 50%;
+      background-color: white;
+      box-shadow: 0 0 28px goldenrod; }
+      #gameArea #firstFive .circle1:nth-child(1), #gameArea #firstFive .circle1:nth-child(5) {
+        position: relative;
+        top: 60px; }
+      #gameArea #firstFive .circle1:nth-child(2), #gameArea #firstFive .circle1:nth-child(4) {
+        position: relative;
+        top: 25px; }
+      #gameArea #firstFive .circle1:nth-child(3) {
+        position: relative;
+        top: -15px; }
+      #gameArea #firstFive .circle1 .incomingBall {
+        width: 50px;
+        height: 50px;
+        text-align: center;
+        background-color: black;
+        border-radius: 50%;
+        position: relative;
+        overflow: hidden;
+        display: none; }
+        #gameArea #firstFive .circle1 .incomingBall .ballCenter {
+          position: absolute;
+          top: 30%;
+          right: 30%;
+          font-size: 12px;
+          line-height: 120%;
+          text-align: center;
+          background-color: white;
+          width: 40%;
+          height: 40%;
+          border-radius: 50%;
+          font-family: "Merriweather", serif;
+          box-shadow: 0 35px 0 5px white, 0 -35px 0 5px white, 35px 0 0 5px white, -35px 0 0 5px white; }
+  #gameArea #nextThirty {
+    display: flex;
+    justify-content: space-evenly;
+    padding-right: 70px;
+    padding-top: 20px; }
+    #gameArea #nextThirty .positionCol {
+      display: flex;
+      flex-direction: column;
+      flex-basis: 50px;
+      height: 500px;
+      flex-direction: column;
+      align-items: center;
+      justify-content: space-between;
+      position: relative; }
+      #gameArea #nextThirty .positionCol .circle1 {
+        display: inline-block;
+        width: 45px;
+        height: 45px;
+        border-radius: 50%;
+        background-color: white;
+        box-sizing: content-box;
+        border: 4px solid goldenrod;
+        box-shadow: inset 0 0 12px goldenrod; }
+        #gameArea #nextThirty .positionCol .circle1 .incomingBall {
+          width: 45px;
+          height: 45px;
+          text-align: center;
+          background-color: black;
+          border-radius: 50%;
+          position: relative;
+          overflow: hidden;
+          display: none; }
+          #gameArea #nextThirty .positionCol .circle1 .incomingBall .ballCenter {
+            position: absolute;
+            top: 30%;
+            right: 30%;
+            font-size: 12px;
+            line-height: 120%;
+            text-align: center;
+            background-color: white;
+            width: 40%;
+            height: 40%;
+            border-radius: 50%;
+            font-family: "Merriweather", serif;
+            box-shadow: 0 32px 0 5px white, 0 -32px 0 5px white, 32px 0 0 5px white, -32px 0 0 5px white; }
+      #gameArea #nextThirty .positionCol .coef {
+        font-family: "Merriweather", serif;
+        font-size: 14px;
+        font-weight: 700;
+        color: maroon; }
+      #gameArea #nextThirty .positionCol .clover {
+        color: goldenrod;
+        font-size: 32px;
+        position: absolute;
+        right: -40px;
+        display: inline; }
+
+#betArea h2 {
+  background-color: maroon;
+  font-family: "Merriweather", serif;
+  text-align: center;
+  padding-top: 12px;
+  box-shadow: 0 0 46px;
+  font-size: 29px; }
+  #betArea h2 span {
+    margin-top: 10px;
+    display: block;
+    font-size: 16px;
+    font-weight: 300;
+    font-style: italic; }
+#betArea form {
+  font-family: "Merriweather", serif;
+  margin-left: 10px; }
+  #betArea form .form-check {
+    margin-bottom: 12px; }
+  #betArea form label {
+    font-size: 18px;
+    font-weight: 700; }
+  #betArea form input[data-hidden^="yes"] {
+    display: none;
+    border-radius: 10%;
+    width: 60%;
+    background-color: black;
+    color: maroon;
+    border: 2px solid maroon;
+    outline: none;
+    font-size: 16px;
+    padding: 6px 12px;
+    margin-bottom: 6px; }
+  #betArea form select {
+    display: none;
+    font-size: 14px;
+    padding: 4px 10px; }
+  #betArea form .errMsg {
+    font-size: 12px;
+    background-color: maroon;
+    color: white;
+    padding: 6px 8px;
+    text-align: center;
+    display: none;
+    opacity: 0;
+    position: relative;
+    left: 215px;
+    bottom: 40px; }
+    #betArea form .errMsg::after {
+      content: "";
+      position: absolute;
+      top: 50%;
+      right: 100%;
+      margin-top: -5px;
+      border-width: 5px;
+      border-style: solid;
+      border-color: transparent maroon transparent transparent; }
+  #betArea form #luckySixParent {
+    font-family: "Permanent Marker", cursive;
+    margin-top: 6px; }
+    #betArea form #luckySixParent h4 {
+      background-color: maroon;
+      text-align: center;
+      box-shadow: 0 0 10px;
+      padding: 6px 0;
+      margin-bottom: 20px; }
+    #betArea form #luckySixParent #luckyCombos {
+      display: flex;
+      margin-bottom: 12px; }
+      #betArea form #luckySixParent #luckyCombos .comb {
+        font-family: "Merriweather", serif;
+        font-weight: 700;
+        background-color: goldenrod;
+        color: white;
+        padding: 12px 18px;
+        box-shadow: 0 0 8px black;
+        cursor: pointer;
+        border-right: 2px solid maroon;
+        transition: all .5s; }
+        #betArea form #luckySixParent #luckyCombos .comb:last-child {
+          border-right: 0; }
+        #betArea form #luckySixParent #luckyCombos .comb:first-child {
+          margin-left: 110px; }
+        #betArea form #luckySixParent #luckyCombos .comb:hover {
+          background-color: maroon;
+          color: black; }
+    #betArea form #luckySixParent #luckySix {
+      background-color: goldenrod;
+      border: 0.5px solid black;
+      width: 275px;
+      height: 366.6725px;
+      margin-left: 175px;
+      margin-bottom: 12px;
+      box-shadow: -6px -6px 8px; }
+      #betArea form #luckySixParent #luckySix .box {
+        border: 0.5px solid black;
+        width: 16.66666%;
+        height: 12.5%;
+        float: left;
+        text-align: center;
+        font-size: 18px;
+        line-height: 100%;
+        color: white;
+        cursor: pointer;
+        transition: all .4s; }
+        #betArea form #luckySixParent #luckySix .box:hover {
+          color: black;
+          background-color: maroon; }
+    #betArea form #luckySixParent #luckySixAmount {
+      border-radius: 10%;
+      width: 60%;
+      background-color: black;
+      color: maroon;
+      border: 2px solid maroon;
+      outline: none;
+      font-size: 16px;
+      padding: 6px 12px;
+      font-family: "Merriweather", serif; }
+    #betArea form #luckySixParent input[type^="submit"] {
+      padding: 10px 16px;
+      background-color: goldenrod;
+      font-size: 18px;
+      color: maroon;
+      border: 1px solid transparent;
+      cursor: pointer;
+      transition: all .5s; }
+      #betArea form #luckySixParent input[type^="submit"]:hover {
+        background-color: maroon;
+        color: goldenrod;
+        border: 1px solid goldenrod; }
+    #betArea form #luckySixParent .errMsgSix {
+      font-family: "Merriweather", serif;
+      font-size: 12px;
+      background-color: maroon;
+      color: white;
+      padding: 6px 8px;
+      text-align: center;
+      display: none;
+      opacity: 0;
+      position: relative;
+      bottom: 35px;
+      right: 200px;
+      text-align: center;
+      display: none;
+      opacity: 0;
+      white-space: nowrap; }
+      #betArea form #luckySixParent .errMsgSix::after {
+        content: " ";
+        position: absolute;
+        top: 50%;
+        left: 100%;
+        margin-top: -5px;
+        border-width: 5px;
+        border-style: solid;
+        border-color: transparent transparent transparent maroon; }
+
+#infoArea {
+  background-color: goldenrod;
+  height: 225px;
+  width: 100%;
+  position: relative;
+  top: 60px;
+  transition: border .5s; }
+  #infoArea .row {
+    height: 100%; }
+    #infoArea .row #firstInfo,
+    #infoArea .row #firstFiveInfo,
+    #infoArea .row #commonColorInfo {
+      font-size: 20px;
+      text-align: center; }
+    #infoArea .row #firstInfo,
+    #infoArea .row #firstFiveInfo {
+      padding-top: 4px;
+      padding-bottom: 15px;
+      border-right: 3px solid maroon; }
+    #infoArea .row #firstInfo #firstOverUnderInfo,
+    #infoArea .row #firstInfo #firstEvenUnevenInfo,
+    #infoArea .row #firstInfo #firstColorInfo {
+      height: 50px;
+      border: 1px solid darkgray;
+      display: flex;
+      width: 80%;
+      margin: 0 auto;
+      background-color: maroon; }
+    #infoArea .row #firstInfo #firstOverUnderInfo #firstIsOver {
+      border-right: 1px solid darkgrey; }
+    #infoArea .row #firstInfo #firstOverUnderInfo #firstIsOver,
+    #infoArea .row #firstInfo #firstOverUnderInfo #firstIsUnder {
+      line-height: 200%;
+      text-align: center;
+      width: 50%; }
+    #infoArea .row #firstInfo #firstEvenUnevenInfo #firstIsEven {
+      border-right: 1px solid darkgrey; }
+    #infoArea .row #firstInfo #firstEvenUnevenInfo #firstIsEven,
+    #infoArea .row #firstInfo #firstEvenUnevenInfo #firstIsUneven {
+      text-align: center;
+      line-height: 200%;
+      width: 50%; }
+    #infoArea .row #firstInfo #firstColorInfo {
+      line-height: 200%;
+      padding-left: 70px; }
+    #infoArea .row #firstFiveInfo {
+      position: relative; }
+      #infoArea .row #firstFiveInfo #sumCounterParent {
+        border: 1px solid darkgray;
+        width: 30%;
+        height: 150px;
+        position: relative;
+        left: 20px; }
+        #infoArea .row #firstFiveInfo #sumCounterParent #sumCounter {
+          background-color: maroon;
+          position: absolute;
+          height: 0;
+          width: 100%;
+          top: 150px;
+          line-height: 0%; }
+      #infoArea .row #firstFiveInfo span {
+        position: absolute;
+        font-size: 16px;
+        top: 55px;
+        right: 60px; }
+    #infoArea .row #commonColorInfo {
+      padding-top: 6px; }
+      #infoArea .row #commonColorInfo #sliderParent {
+        display: flex;
+        justify-content: space-around; }
+        #infoArea .row #commonColorInfo #sliderParent .slider {
+          position: relative;
+          height: 150px;
+          width: 0;
+          border: 1px solid darkgray; }
+          #infoArea .row #commonColorInfo #sliderParent .slider .slidingBall {
+            position: absolute;
+            width: 15px;
+            height: 15px;
+            border-radius: 50%;
+            top: 135px;
+            right: -7px; }
+          #infoArea .row #commonColorInfo #sliderParent .slider #redSlidingBall {
+            background-color: red; }
+          #infoArea .row #commonColorInfo #sliderParent .slider #blueSlidingBall {
+            background-color: darkblue; }
+          #infoArea .row #commonColorInfo #sliderParent .slider #blackSlidingBall {
+            background-color: black; }
+          #infoArea .row #commonColorInfo #sliderParent .slider #brownSlidingBall {
+            background-color: brown; }
+          #infoArea .row #commonColorInfo #sliderParent .slider #orangeSlidingBall {
+            background-color: darkorange; }
+          #infoArea .row #commonColorInfo #sliderParent .slider #greenSlidingBall {
+            background-color: green; }
+          #infoArea .row #commonColorInfo #sliderParent .slider #purpleSlidingBall {
+            background-color: purple; }
+          #infoArea .row #commonColorInfo #sliderParent .slider #yellowSlidingBall {
+            background-color: yellow; }
+
+#resultParent {
+  width: 100%;
+  height: 1500px;
+  background-color: rgba(0, 0, 0, 0);
+  z-index: 999;
+  padding-top: 200px;
+  position: absolute;
+  top: 0;
+  display: none;
+  transition: background-color .7s; }
+  #resultParent #result {
+    font-family: "Merriweather", serif;
+    background-color: #009900;
+    border: 2px solid black;
+    border-radius: 50%;
+    text-align: center;
+    padding-left: 130px;
+    padding-top: 60px;
+    padding-bottom: 12px;
+    margin: 0 auto;
+    z-index: 9999;
+    width: 0;
+    height: 700px; }
+    #resultParent #result #resBtn {
+      position: relative;
+      bottom: 30px;
+      right: 500px; }
+    #resultParent #result h3 {
+      margin: 0 auto;
+      text-align: center; }
+    #resultParent #result #firstOverUnderResult,
+    #resultParent #result #firstEvenUnevenResult,
+    #resultParent #result #firstColorResult,
+    #resultParent #result #firstFiveOverUnderResult,
+    #resultParent #result #mostCommonColorResult,
+    #resultParent #result #luckySixResult {
+      display: flex;
+      margin-bottom: 8px;
+      font-weight: 700; }
+      #resultParent #result #firstOverUnderResult div,
+      #resultParent #result #firstEvenUnevenResult div,
+      #resultParent #result #firstColorResult div,
+      #resultParent #result #firstFiveOverUnderResult div,
+      #resultParent #result #mostCommonColorResult div,
+      #resultParent #result #luckySixResult div {
+        font-weight: 400; }
+        #resultParent #result #firstOverUnderResult div:first-child,
+        #resultParent #result #firstEvenUnevenResult div:first-child,
+        #resultParent #result #firstColorResult div:first-child,
+        #resultParent #result #firstFiveOverUnderResult div:first-child,
+        #resultParent #result #mostCommonColorResult div:first-child,
+        #resultParent #result #luckySixResult div:first-child {
+          color: maroon; }
+        #resultParent #result #firstOverUnderResult div:last-child,
+        #resultParent #result #firstEvenUnevenResult div:last-child,
+        #resultParent #result #firstColorResult div:last-child,
+        #resultParent #result #firstFiveOverUnderResult div:last-child,
+        #resultParent #result #mostCommonColorResult div:last-child,
+        #resultParent #result #luckySixResult div:last-child {
+          margin-left: 40px;
+          color: white; }
+    #resultParent #result #firstOverUnderResult {
+      margin-top: 30px; }
+      #resultParent #result #firstOverUnderResult div:first-child {
+        margin-left: 60px; }
+    #resultParent #result #firstEvenUnevenResult div:first-child {
+      margin-left: 46px; }
+    #resultParent #result #firstColorResult div:first-child {
+      margin-left: 110px; }
+    #resultParent #result #firstFiveOverUnderResult div:first-child {
+      margin-left: 23px; }
+    #resultParent #result #mostCommonColorResult div:first-child {
+      margin-left: 28px; }
+    #resultParent #result #luckySixResult div:first-child {
+      margin-left: 132px; }
+    #resultParent #result #profit {
+      margin-bottom: 20px; }
+    #resultParent #result #topProfits {
+      padding-top: 12px; }
+      #resultParent #result #topProfits h2 {
+        position: relative;
+        right: 20px; }
+
+/*************************************************************************************************/
+/************************************   Helper styles   ****************************************/
+.clover {
+  display: none; }
+
+#topProfitsList {
+  list-style-type: none;
+  padding: 0;
+  margin: 0 auto; }
+
+/*************************************************************************************************/
+
+/*# sourceMappingURL=master.css.map */

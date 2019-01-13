@@ -1,0 +1,206 @@
+@import "vars.scss";
+
+#betArea {
+    h2 {
+        background-color: $info-area-col;
+        font-family: "Merriweather", serif;
+        text-align: center;
+        padding-top: 12px;
+        box-shadow: 0 0 46px;
+        font-size: 29px;
+
+        span {
+            margin-top: 10px;
+            display: block;
+            font-size: 16px;
+            font-weight: 300;
+            font-style: italic;
+        }
+    }
+
+    form {
+        font-family: "Merriweather", serif;
+        margin-left: 10px;
+
+        .form-check {
+            margin-bottom: 12px;
+        }
+
+        label {
+            font-size: 18px;
+            font-weight: 700;
+        }
+
+        input[data-hidden^="yes"] {
+            display: none;
+            border-radius: 10%;
+            width: 60%;
+            background-color: black;
+            color: $info-area-col;
+            border: 2px solid $info-area-col;
+            outline: none;
+            font-size: 16px;
+            padding: 6px 12px;
+            margin-bottom: 6px;
+        }
+
+        select {
+            display: none;
+            font-size: 14px;
+            padding: 4px 10px;
+        }
+
+        .errMsg {
+            font-size: 12px;
+            background-color: $info-area-col;
+            color: white;
+            padding: 6px 8px;
+            text-align: center;
+            display: none;
+            opacity: 0;
+            position: relative;
+            left: 215px;
+            bottom: 40px;
+
+            &::after {
+                content: "";
+                position: absolute;
+                top: 50%;
+                right: 100%;
+                margin-top: -5px;
+                border-width: 5px;
+                border-style: solid;
+                border-color: transparent $info-area-col transparent transparent;
+            }
+
+        }
+
+
+
+        #luckySixParent {
+            font-family: "Permanent Marker", cursive;
+            margin-top: 6px;
+
+            h4 {
+                background-color: $info-area-col;
+                text-align: center;
+                box-shadow: 0 0 10px;
+                padding: 6px 0;
+                margin-bottom: 20px;
+            }
+
+            #luckyCombos {
+                display: flex;
+                margin-bottom: 12px;
+
+                .comb {
+                    font-family: "Merriweather", serif;
+                    font-weight: 700;
+                    background-color: $lucky-area-col;
+                    color: white;
+                    padding: 12px 18px;
+                    box-shadow: 0 0 8px black;
+                    cursor: pointer;
+                    border-right: 2px solid $info-area-col;
+                    transition: all .5s;
+                    &:last-child {
+                        border-right: 0;
+                    }
+                    &:first-child {
+                        margin-left: 110px;
+                    }
+                    &:hover {
+                        background-color: $info-area-col;
+                        color: black;
+                    }
+                }
+            }
+
+            #luckySix {
+                background-color: $lucky-area-col;
+                border: 0.5px solid black;
+                width: 275px;
+                height: 366.6725px;
+                margin-left: 175px;
+                margin-bottom: 12px;
+                box-shadow: -6px -6px 8px;
+
+                .box {
+                    border: 0.5px solid black;
+                    width: 16.66666%;
+                    height: 12.5%;
+                    float: left;
+                    text-align: center;
+                    font-size: 18px;
+                    line-height: 100%;
+                    color: white;
+                    cursor: pointer;
+                    transition: all .4s;
+
+                    &:hover {
+                        color: black;
+                        background-color: $info-area-col;
+                    }
+                }
+            }
+
+            #luckySixAmount {
+                border-radius: 10%;
+                width: 60%;
+                background-color: black;
+                color: $info-area-col;
+                border: 2px solid $info-area-col;
+                outline: none;
+                font-size: 16px;
+                padding: 6px 12px;
+                font-family: "Merriweather", serif;
+            }
+
+            input[type^="submit"] {
+                padding: 10px 16px;
+                background-color: $lucky-area-col;
+                font-size: 18px;
+                color: $info-area-col;
+                border: 1px solid transparent;
+                cursor: pointer;
+                transition: all .5s;
+
+                &:hover {
+                    background-color: $info-area-col;
+                    color: $lucky-area-col;
+                    border: 1px solid $lucky-area-col;
+                }
+            }
+
+
+            .errMsgSix {
+                font-family: "Merriweather", serif;
+                font-size: 12px;
+                background-color: $info-area-col;
+                color: white;
+                padding: 6px 8px;
+                text-align: center;
+                display: none;
+                opacity: 0;
+                position: relative;
+                bottom: 35px;
+                right: 200px;
+                text-align: center;
+                display: none;
+                opacity: 0;
+                white-space: nowrap;
+
+                &::after {
+                    content: " ";
+                    position: absolute;
+                    top: 50%;
+                    left: 100%;
+                    margin-top: -5px;
+                    border-width: 5px;
+                    border-style: solid;
+                    border-color: transparent transparent transparent $info-area-col;
+                }
+            }
+        }
+    }
+}

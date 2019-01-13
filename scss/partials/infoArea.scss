@@ -1,0 +1,163 @@
+@import "vars.scss";
+
+#infoArea {
+
+    background-color: $lucky-area-col;
+    height: 225px;
+    width: 100%;
+    position: relative;
+    top: 60px;
+    transition: border .5s;
+
+    .row {
+        height: 100%;
+
+        #firstInfo,
+        #firstFiveInfo,
+        #commonColorInfo {
+            font-size: 20px;
+            text-align: center;
+        }
+
+        #firstInfo,
+        #firstFiveInfo {
+            padding-top: 4px;
+            padding-bottom: 15px;
+            border-right: 3px solid $info-area-col;
+        }
+
+        #firstInfo {
+
+            #firstOverUnderInfo,
+            #firstEvenUnevenInfo,
+            #firstColorInfo {
+                height: 50px;
+                border: 1px solid darkgray;
+                display: flex;
+                width: 80%;
+                margin: 0 auto;
+                background-color: $info-area-col;
+            }
+
+            #firstOverUnderInfo {
+                #firstIsOver {
+                    border-right: 1px solid darkgrey;
+                }
+
+                #firstIsOver,
+                #firstIsUnder {
+                    line-height: 200%;
+                    text-align: center;
+                    width: 50%;
+                }
+            }
+
+            #firstEvenUnevenInfo {
+                #firstIsEven {
+                    border-right: 1px solid darkgrey;
+                }
+
+                #firstIsEven,
+                #firstIsUneven {
+                    text-align: center;
+                    line-height: 200%;
+                    width: 50%;
+                }
+            }
+
+            #firstColorInfo {
+                line-height: 200%;
+                padding-left: 70px;
+            }
+
+        }
+
+        #firstFiveInfo {
+            position: relative;
+
+            #sumCounterParent {
+                border: 1px solid darkgray;
+                width: 30%;
+                height: 150px;
+                position: relative;
+                left: 20px;
+
+                #sumCounter {
+                    background-color: $info-area-col;
+                    position: absolute;
+                    height: 0;
+                    width: 100%;
+                    top: 150px;
+                    line-height: 0%;
+                }
+            }
+
+            span {
+                position: absolute;
+                font-size: 16px;
+                top: 55px;
+                right: 60px;
+            }
+        }
+
+        #commonColorInfo {
+
+            padding-top: 6px;
+
+            #sliderParent {
+                display: flex;
+                justify-content: space-around;
+
+                .slider {
+                    position: relative;
+                    height: 150px;
+                    width: 0;
+                    border: 1px solid darkgray;
+
+                    .slidingBall {
+
+                        position: absolute;
+                        width: 15px;
+                        height: 15px;
+                        border-radius: 50%;
+                        top: 135px;
+                        right: -7px;
+
+                    }
+
+                    #redSlidingBall {
+                        background-color: red;
+                    }
+
+                    #blueSlidingBall {
+                        background-color: darkblue;
+                    }
+
+                    #blackSlidingBall {
+                        background-color: black;
+                    }
+
+                    #brownSlidingBall {
+                        background-color: brown;
+                    }
+
+                    #orangeSlidingBall {
+                        background-color: darkorange;
+                    }
+
+                    #greenSlidingBall {
+                        background-color: green;
+                    }
+
+                    #purpleSlidingBall {
+                        background-color: purple;
+                    }
+
+                    #yellowSlidingBall {
+                        background-color: yellow;
+                    }
+                }
+            }
+        }
+    }
+}

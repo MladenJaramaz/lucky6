@@ -1,0 +1,183 @@
+@import "vars.scss";
+
+
+#gameArea {
+    background-color: $game-area-col;
+    height: 780px;
+    box-shadow: 0 0 46px;
+    position: relative;
+
+
+    #numberDrawn {
+        box-sizing: content-box;
+        width: 250px;
+        height: 250px;
+        border-radius: 50%;
+        background-color: white;
+        margin-left: 75px;
+        position: relative;
+        text-align: center;
+        border: 8px solid goldenrod;
+        box-shadow: inset 0 0 20px goldenrod;
+
+        #rotatingBall {
+            border-radius: 50%;
+            text-align: center;
+            height: 0;
+            width: 0;
+            position: absolute;
+            overflow: hidden;
+            transform: rotateZ(0);
+
+            #ballNumber {
+                background-color: white;
+                border-radius: 50%;
+                width: 50%;
+                height: 50%;
+                position: absolute;
+                top: 25%;
+                right: 25%;
+                font-size: 0;
+            }
+        }
+    }
+
+    #firstFive {
+        margin-left: 85px;
+        margin-top: 50px;
+        margin-bottom: 50px;
+
+        // positioning circles became impossible with margins once they got some text
+        // QUESTION should margins be used combined with position: relative/absolute ?
+        .circle1 {
+            display: inline-block;
+            width: 50px;
+            height: 50px;
+            position: relative;
+            border-radius: 50%;
+            background-color: white;
+            box-shadow: 0 0 28px goldenrod;
+
+            &:nth-child(1),
+            &:nth-child(5) {
+                position: relative;
+                top: 60px;
+            }
+
+            &:nth-child(2),
+            &:nth-child(4) {
+                position: relative;
+                top: 25px;
+            }
+
+            &:nth-child(3) {
+                position: relative;
+                top: -15px;
+            }
+
+            .incomingBall {
+                width: 50px;
+                height: 50px;
+                text-align: center;
+                background-color: black;
+                border-radius: 50%;
+                position: relative;
+                overflow: hidden;
+                display: none;
+
+
+                .ballCenter {
+                    position: absolute;
+                    top: 30%;
+                    right: 30%;
+                    font-size: 12px;
+                    line-height: 120%;
+                    text-align: center;
+                    background-color: white;
+                    width: 40%;
+                    height: 40%;
+                    border-radius: 50%;
+                    font-family: "Merriweather", serif;
+                    box-shadow: 0 35px 0 5px white, 0 -35px 0 5px white, 35px 0 0 5px white, -35px 0 0 5px white;
+                }
+            }
+        }
+    }
+
+
+
+
+
+    #nextThirty {
+        display: flex;
+        justify-content: space-evenly;
+        padding-right: 70px;
+        padding-top: 20px;
+
+        .positionCol {
+            display: flex;
+            flex-direction: column;
+            flex-basis: 50px;
+            height: 500px;
+            flex-direction: column;
+            align-items: center;
+            justify-content: space-between;
+            position: relative;
+
+            .circle1 {
+                display: inline-block;
+                width: 45px;
+                height: 45px;
+                border-radius: 50%;
+                background-color: white;
+                box-sizing: content-box;
+                border: 4px solid goldenrod;
+                box-shadow: inset 0 0 12px goldenrod;
+
+                .incomingBall {
+                    width: 45px;
+                    height: 45px;
+                    text-align: center;
+                    background-color: black;
+                    border-radius: 50%;
+                    position: relative;
+                    overflow: hidden;
+                    display: none;
+
+                    .ballCenter {
+                        position: absolute;
+                        top: 30%;
+                        right: 30%;
+                        font-size: 12px;
+                        line-height: 120%;
+                        text-align: center;
+                        background-color: white;
+                        width: 40%;
+                        height: 40%;
+                        border-radius: 50%;
+                        font-family: "Merriweather", serif;
+                        box-shadow: 0 32px 0 5px white, 0 -32px 0 5px white, 32px 0 0 5px white, -32px 0 0 5px white;
+                    }
+                }
+            }
+
+            .coef {
+                font-family: "Merriweather", serif;
+                font-size: 14px;
+                font-weight: 700;
+                color: $info-area-col;
+            }
+
+            .clover {
+                color: $lucky-area-col;
+                font-size: 32px;
+                position: absolute;
+                right: -40px;
+                display: inline;
+            }
+        }
+    }
+
+
+    
+}
